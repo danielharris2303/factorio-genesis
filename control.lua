@@ -1,6 +1,4 @@
 ChunkAlteration = require 'control/chunkAlteration'
-Debug = require 'control/debug'
-
 script.on_init(function ()
     global.doneIntro = false
     remote.call("freeplay", "set_disable_crashsite", true)

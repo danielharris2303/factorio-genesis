@@ -39,7 +39,6 @@ end
 function ChunkAlteration.alterations.embodyPlayer()
     character = game.surfaces.nauvis.create_entity({name='character', position={16,16}})
     player.set_controller {type = defines.controllers.character, character = character}
-    player.character_running_speed_modifier = 0 -- -1
     b1 = game.surfaces.nauvis.create_entity({name='small-biter', position={18,18}})
     b1.force = 'neutral'
 end
@@ -86,7 +85,6 @@ function ChunkAlteration.on_chunk_generated(event)
             end
         end
     end
-    Debug.log(sheduledAlterations)
 end
 
 return ChunkAlteration

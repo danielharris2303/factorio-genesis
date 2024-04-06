@@ -18,12 +18,13 @@ local function addTotem(i)
     crafting_categories = {"sacrifice-"..tostring(i)},
     energy_usage = '1W',
     crafting_speed = 1,
-    --energy_source = {type = "void", emissions_per_minute = 0},
+        --energy_source = {type = "void", emissions_per_minute = 0},
   --[[  energy_source = {
       type = "fluid",
    --   fluid_box =
       emissions_per_minute = 0
     },]]
+    energy_source = {type = "void", emissions_per_minute = 0},
     animation = 
     {
       layers = {
@@ -109,5 +110,14 @@ genSacrificePrototypes(5)
 
 
 --Change existing prototypes
+local character = data.raw["character"]["character"]
+  character.inventory_size = 3
+  local reach = 2
+  character.build_distance = reach
+  character.drop_item_distance = reach
+  character.reach_distance = reach
+  local speedMult = 1/3
+  character.running_speed = 0.15*speedMult
+  character.distance_per_frame = 0.13*speedMult
 
-data.raw["character"].inventory_size = 3
+  data.raw["item"]["stone"].stack_size = 1
