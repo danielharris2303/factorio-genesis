@@ -1,4 +1,9 @@
 ChunkAlteration = require 'control/chunkAlteration'
+ItemSearch = require 'control/itemSearch'
+require 'control/drying'
+
+commands.add_command("item_search", nil, function() ItemSearch.DeleteAllItemsWithName("stone") end)
+
 script.on_init(function ()
     global.doneIntro = false
     remote.call("freeplay", "set_disable_crashsite", true)
